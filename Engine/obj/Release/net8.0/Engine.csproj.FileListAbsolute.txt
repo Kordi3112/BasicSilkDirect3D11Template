@@ -1,0 +1,12 @@
+C:\Users\Kordian\source\repos\BasicSilkDirect3D11Template\Engine\bin\Release\net8.0\Engine.deps.json
+C:\Users\Kordian\source\repos\BasicSilkDirect3D11Template\Engine\bin\Release\net8.0\Engine.dll
+C:\Users\Kordian\source\repos\BasicSilkDirect3D11Template\Engine\bin\Release\net8.0\Engine.pdb
+C:\Users\Kordian\source\repos\BasicSilkDirect3D11Template\Engine\obj\Release\net8.0\Engine.csproj.AssemblyReference.cache
+C:\Users\Kordian\source\repos\BasicSilkDirect3D11Template\Engine\obj\Release\net8.0\Engine.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kordian\source\repos\BasicSilkDirect3D11Template\Engine\obj\Release\net8.0\Engine.AssemblyInfoInputs.cache
+C:\Users\Kordian\source\repos\BasicSilkDirect3D11Template\Engine\obj\Release\net8.0\Engine.AssemblyInfo.cs
+C:\Users\Kordian\source\repos\BasicSilkDirect3D11Template\Engine\obj\Release\net8.0\Engine.csproj.CoreCompileInputs.cache
+C:\Users\Kordian\source\repos\BasicSilkDirect3D11Template\Engine\obj\Release\net8.0\Engine.dll
+C:\Users\Kordian\source\repos\BasicSilkDirect3D11Template\Engine\obj\Release\net8.0\refint\Engine.dll
+C:\Users\Kordian\source\repos\BasicSilkDirect3D11Template\Engine\obj\Release\net8.0\Engine.pdb
+C:\Users\Kordian\source\repos\BasicSilkDirect3D11Template\Engine\obj\Release\net8.0\ref\Engine.dll

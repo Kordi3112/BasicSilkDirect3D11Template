@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicSilkDirect3D11Template", "BasicSilkDirect3D11Template\BasicSilkDirect3D11Template.csproj", "{58B2A691-743E-4831-B5A5-86519E32635B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Engine", "Engine\Engine.csproj", "{DE940B6C-08EC-4722-A6FE-492454C1E08B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{58B2A691-743E-4831-B5A5-86519E32635B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58B2A691-743E-4831-B5A5-86519E32635B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58B2A691-743E-4831-B5A5-86519E32635B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58B2A691-743E-4831-B5A5-86519E32635B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE940B6C-08EC-4722-A6FE-492454C1E08B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE940B6C-08EC-4722-A6FE-492454C1E08B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE940B6C-08EC-4722-A6FE-492454C1E08B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE940B6C-08EC-4722-A6FE-492454C1E08B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5C6D2572-E239-4765-9480-90AC8733C23B}
+	EndGlobalSection
+EndGlobal

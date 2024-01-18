@@ -100,6 +100,7 @@ namespace Engine.Core
 
         private void FixedUpdate(GTime gTime)
         {
+            Console.WriteLine("Fixed: {0}, {1}", gTime.RealDeltaTime, gTime.TotalRealTime);
             SceneManager.FixedUpdate(gTime);
         }
 
@@ -116,11 +117,10 @@ namespace Engine.Core
 
         private void Render(GTime gTime)
         {
-            VideoManager.MainTarget.PrepareDraw();
+            VideoManager.MainRenderTargetController.PrepareDraw();
 
             SceneManager.Render(gTime);
-
-            
+    
             VideoManager.FinalRender();
         }
 

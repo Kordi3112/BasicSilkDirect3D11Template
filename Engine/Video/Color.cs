@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Engine.Video
 {
-    internal struct Color
+    public struct Color
     {
         private static float inv255 = 1.0f / 255.0f;
 
@@ -44,6 +44,7 @@ namespace Engine.Video
 
         public Color(byte r, byte g, byte b, byte a) => rgba = [r, g, b, a];
         public Color(byte r, byte g, byte b) => rgba = [r, g, b, 255];
+        public Color(byte[] bytes, int offset) => rgba = [bytes[offset], bytes[offset + 1], bytes[offset + 2], bytes[offset + 3]];
 
         public Color(Color4 color) : this((byte)(color.R * 255), (byte)(color.G * 255), (byte)(color.B * 255), (byte)(color.A * 255))
         {
@@ -54,6 +55,25 @@ namespace Engine.Video
         public byte[] Get() => rgba;
 
         public Color4 ToColor4() => new Color4(R * inv255, G * inv255, B * inv255, A * inv255);
+
+        public Vector4 ToVector4 => new Vector4(R * inv255, G * inv255, B * inv255, A * inv255);
+
+        public override string ToString()
+        {
+            StringBuilder sb = new();
+
+            sb.Append("(");
+            sb.Append(R);
+            sb.Append(", ");
+            sb.Append(G);
+            sb.Append(", ");
+            sb.Append(B);
+            sb.Append(", ");
+            sb.Append(A);
+            sb.Append(")");
+
+            return sb.ToString();
+        }
 
 
         public static Color Red => new Color(255, 0, 0);

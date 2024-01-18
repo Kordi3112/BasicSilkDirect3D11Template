@@ -3,18 +3,9 @@ using Silk.NET.Core.Native;
 using Silk.NET.Direct3D.Compilers;
 using Silk.NET.Direct3D11;
 using Silk.NET.DXGI;
-using Silk.NET.Input;
-using Silk.NET.OpenAL;
-using Silk.NET.OpenGL;
-using Silk.NET.SDL;
 using Silk.NET.Windowing;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using static Engine.Video.VideoHelper;
+
 
 namespace Engine.Video
 {
@@ -44,7 +35,7 @@ namespace Engine.Video
         private ComPtr<ID3D11Texture2D> backBuffer;
         private ComPtr<ID3D11RenderTargetView> swapChainRTV;
 
-        public VMMainTarget MainTarget { get; private set; }
+        public MainRenderTargetController MainRenderTargetController { get; private set; }
 
         private GameManager gameManager;
 
@@ -56,7 +47,7 @@ namespace Engine.Video
 
             BasicEffects = new BasicShaders();
 
-            MainTarget = new VMMainTarget(this);
+            MainRenderTargetController = new MainRenderTargetController(this);
         }
 
 
@@ -175,7 +166,7 @@ namespace Engine.Video
 
 
             // Render Main Target
-            MainTarget.Render();
+            MainRenderTargetController.Render();
 
 
             // Present the drawn image.
@@ -199,7 +190,7 @@ namespace Engine.Video
             CrashHandler.CheckForError(device.CreateRenderTargetView(backBuffer, null, ref swapChainRTV), "Swapchain RenderView creation failure");
 
             // Resize main target
-            MainTarget.Resize();
+            MainRenderTargetController.Resize();
 
             // Define rasterizer
             var rsDesc = new RasterizerDesc()

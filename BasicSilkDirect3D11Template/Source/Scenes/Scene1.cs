@@ -1,4 +1,5 @@
 ﻿using Engine.Core;
+using Engine.Tools;
 using Engine.Video;
 using SharpDX.Direct2D1;
 using Silk.NET.Core.Native;
@@ -36,12 +37,12 @@ namespace BasicSilkDirect3D11Template.Source.Scenes
 
         public override void FixedUpdate(GTime deltaTime)
         {
-
+            
         }
 
         public override void Update(GTime deltaTime)
         {
-
+            
         }
 
         public override void LateUpdate(GTime deltaTime)

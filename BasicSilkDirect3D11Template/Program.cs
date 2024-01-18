@@ -25,8 +25,9 @@ void GameManager_InitScenes(object sender, EventArgs e)
 
     gameManager.SceneManager.AddScene(new Scene1());
 
-
     gameManager.SceneManager.ApplyScene("Scene1");
+
+
 }
 
 void GameManager_InitResources(object sender, EventArgs e)

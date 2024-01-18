@@ -3,22 +3,25 @@ using SharpDX.WIC;
 using Silk.NET.Core.Native;
 using Silk.NET.Direct3D11;
 using Silk.NET.DXGI;
-using System;
 
 using System.Runtime.CompilerServices;
 
 
 namespace Engine.Video
 {
-    internal class Texture : IDisposable
+    public class Texture : IDisposable
     {
-        internal ComPtr<ID3D11Texture2D> texture;
+        private ComPtr<ID3D11Texture2D> texture;
 
         private ComPtr<ID3D11ShaderResourceView> shaderResourceView;
 
         public Vector2i Size { get; private set; }
 
+        public ref ComPtr<ID3D11Texture2D> GetTextureRef() => ref texture;
         public ref ComPtr<ID3D11ShaderResourceView> GetShaderResourceViewRef() => ref shaderResourceView;
+
+        public ComPtr<ID3D11Texture2D> GetTexture() => texture;
+        public ComPtr<ID3D11ShaderResourceView> GetShaderResourceView() => shaderResourceView;
 
 
         public unsafe bool Create(ComPtr<ID3D11Device> device, Stream stream, Vector2i size)
@@ -80,7 +83,7 @@ namespace Engine.Video
             return Create(device, size, colors);
         }
 
-        public unsafe static ComPtr<ID3D11Texture2D> CreateStagged(ComPtr<ID3D11Device> device, Vector2i size)
+        public unsafe static ComPtr<ID3D11Texture2D> CreateStaged(ComPtr<ID3D11Device> device, Vector2i size)
         {
             ComPtr<ID3D11Texture2D> texture = default;
 

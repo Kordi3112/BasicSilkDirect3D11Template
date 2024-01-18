@@ -1,4 +1,5 @@
 ﻿
+using Engine.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Direct3D.Compilers;
 using Silk.NET.Direct3D11;
@@ -96,10 +97,31 @@ namespace Engine.Video
 
                 return;
             }
-            //TODO: implement the rest
-            //......
 
-            throw new Exception("Not implemented type");
+
+            if (type == EffectInputLayoutType.PositionPosPos)
+            {
+                SetInputLayout(VertexPositionPosPos.GetInputElements());
+
+                return;
+            }
+
+            if (type == EffectInputLayoutType.PositionTexture)
+            {
+                SetInputLayout(VertexPositionTexture.GetInputElements());
+
+                return;
+            }
+
+            if (type == EffectInputLayoutType.PositionTextureInt)
+            {
+                SetInputLayout(VertexPositionTextureInt.GetInputElements());
+
+                return;
+            }
+
+
+            CrashHandler.Error("Not implemented input layout type: " + type);
         }
 
         public void ApplyShader()

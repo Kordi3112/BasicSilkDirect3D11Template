@@ -1,28 +1,12 @@
-﻿using Silk.NET.Core.Native;
-using Silk.NET.Direct3D11;
-using Silk.NET.DXGI;
-using Silk.NET.Maths;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
+﻿using Silk.NET.DXGI;
+
 
 namespace Engine.Video
 {
-    public struct VertexPositionColor
+    public struct VertexPositionColor(Vector2 pos, Vector4 col)
     {
-        public Vector2 Position;
-        public Vector4 Color;
-
-        public VertexPositionColor(Vector2 pos, Vector4 col)
-        {
-            Position = pos;
-            Color = col;
-        }
-
+        public Vector2 Position = pos;
+        public Vector4 Color = col;
 
         public static InputElement[] GetInputElements()
         {

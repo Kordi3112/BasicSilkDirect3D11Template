@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Engine.Video
+namespace Engine.Tools
 {
     public class VideoHelper
     {
@@ -22,12 +22,12 @@ namespace Engine.Video
 
                 context.Map(resource, 0, Map.WriteDiscard, 0, ref mappedSubresource);
 
-                fixed(T* pData = &data)
+                fixed (T* pData = &data)
                 {
                     System.Buffer.MemoryCopy(pData, mappedSubresource.PData, sizeInBytes, sizeInBytes);
                 }
 
-                
+
             }
 
             public unsafe static void UpdateDynamicResource<T>(ComPtr<ID3D11DeviceContext> context, ComPtr<ID3D11Buffer> resource, T[] data, int sizeInBytes) where T : unmanaged
@@ -99,7 +99,7 @@ namespace Engine.Video
                 };
 
 
-    
+
 
                 unsafe
                 {
@@ -124,7 +124,7 @@ namespace Engine.Video
                     MiscFlags = (uint)ResourceMiscFlag.None,
                     StructureByteStride = (uint)structureByteStride,
                 };
-                
+
 
                 unsafe
                 {
@@ -138,7 +138,7 @@ namespace Engine.Video
                         CrashHandler.CheckForError(device.CreateBuffer(in bufferDesc, in subresourceData, ref buffer), "Failed buffer creation");
                     }
 
-                    
+
                 }
 
 

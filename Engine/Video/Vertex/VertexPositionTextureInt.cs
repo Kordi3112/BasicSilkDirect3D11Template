@@ -2,12 +2,11 @@
 
 namespace Engine.Video
 {
-    
-    public struct VertexPositionColorTexture(Vector2 pos, Vector4 color, Vector2 tCoords)
+    public struct VertexPositionTextureInt(Vector2 pos, Vector2 tCoords)
     {
         public Vector2 Position = pos;
-        public Vector4 Color = color;
         public Vector2 TCoords = tCoords;
+        public int Rotation;
 
         public unsafe static int SizeInBytes() => sizeof(VertexPositionColorTexture);
 
@@ -16,8 +15,8 @@ namespace Engine.Video
             return
             [
                 new InputElement("POSITION", 0, Format.FormatR32G32Float, 0, 0),
-                new InputElement("COLOR", 0, Format.FormatR32G32B32A32Float, 8, 0),
-                new InputElement("TEXCOORD", 0, Format.FormatR32G32Float, 24, 0),
+                new InputElement("TEXCOORD", 0, Format.FormatR32G32Float, 8, 0),
+                new InputElement("PSIZE", 0, Format.FormatR32Float, 16, 0),
             ];
         }
     }

@@ -9,12 +9,12 @@ namespace Engine.Core
     public struct GTime
     {
 
-        public float TotalRealTime { get; internal set; }
-        public float TotalTime { get; internal set; }
+        public float TotalRealTime;
+        public float TotalTime;
 
-        public float RealDeltaTime { get; internal set; }
+        public float RealDeltaTime;
 
-        public float TimeSpeed { get; internal set; }
+        public float TimeSpeed;
 
         public float DeltaTime => RealDeltaTime * TimeSpeed;
 

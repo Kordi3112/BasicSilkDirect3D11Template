@@ -1,4 +1,5 @@
-﻿using SharpDX;
+﻿using Engine.Tools;
+using SharpDX;
 using SharpDX.Direct2D1;
 using SharpDX.DXGI;
 using Silk.NET.Core.Native;
@@ -12,7 +13,7 @@ using System.Runtime.InteropServices;
 
 namespace Engine.Video
 {
-    public class VMMainTarget(VideoManager videoManager)
+    public class MainRenderTargetController(VideoManager videoManager)
     {
         public ViewMode ViewMode { get; private set; } = ViewMode._16_9;
 
@@ -31,9 +32,6 @@ namespace Engine.Video
 
         private ComPtr<ID3D11Buffer> cB1;
         private ComPtr<ID3D11Buffer> vertexBuffer;
-
-
-        Texture texture;
 
         public void ChangeViewMode(ViewMode viewMode, float resolutionRatio)
         {
@@ -97,11 +95,8 @@ namespace Engine.Video
             // Set Shader
             videoManager.BasicEffects.BasicColorTextureShader.ApplyShader();
 
-
-
             // Set texture
-            //videoManager.DeviceContext.PSSetShaderResources(0, 1, ref MainRenderTexture.GetShaderResourceViewRef());
-            videoManager.DeviceContext.PSSetShaderResources(0, 1, ref texture.GetShaderResourceViewRef());
+            videoManager.DeviceContext.PSSetShaderResources(0, 1, ref MainRenderTexture.GetShaderResourceViewRef());
 
 
             // Draw
@@ -122,40 +117,7 @@ namespace Engine.Video
 
             videoManager.DeviceContext.VSSetConstantBuffers(0, 1, ref cB1);
 
-            // ============> TEST
 
-            texture = new Texture();
-
-            texture.Create(videoManager.Device, new Vector2i(3, 2), [
-                new Color(1, 2, 3, 4), new Color(5, 6, 7, 8), new Color(9, 10, 11, 12), 
-                new Color(13, 14, 15, 16), new Color(17, 18, 19, 20), new Color(21, 22, 23, 24)
-                ]);
-
-            var testTexture = Texture.CreateStagged(videoManager.Device, texture.Size);
-
-            videoManager.DeviceContext.CopyResource(testTexture, texture.texture);
-
-            var mappedSubresource = new MappedSubresource();
-
-            mappedSubresource.RowPitch = (uint)texture.Size.X * 4; // im not sure if its neccesary
-
-            videoManager.DeviceContext.Map(testTexture, 0, Map.Read, 0, ref mappedSubresource);
-
-            byte[] data = new byte[texture.Size.X * texture.Size.Y * 4];
-
-            fixed (byte* pData = data)
-            {
-
-                System.Buffer.MemoryCopy(mappedSubresource.PData, pData, data.Length, data.Length);
-           
-            }
-
-            videoManager.DeviceContext.Unmap(testTexture, 0);
-
-            for (int i = 0; i < data.Length; i++)
-            {
-                Console.WriteLine((int)data[i]);
-            }
         }
 
 

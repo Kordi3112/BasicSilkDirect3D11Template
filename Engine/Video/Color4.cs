@@ -41,6 +41,11 @@ namespace Engine.Video
 
         public Color4(float r, float g, float b, float a) => rgba = [r, g, b, a];
 
+        public Color4(float r, float g, float b) => rgba = [r, g, b, 1.0f];
+        public Color4(Vector4 vector) => rgba = [vector.X, vector.Y, vector.Z, vector.W];
+
+
+        public Vector4 ToVector4() => new Vector4(R, G, B, A);
 
         public unsafe float* GetPtr()
         {

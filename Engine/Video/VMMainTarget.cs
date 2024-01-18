@@ -137,11 +137,9 @@ namespace Engine.Video
 
             var mappedSubresource = new MappedSubresource();
 
-            mappedSubresource.RowPitch = (uint)texture.Size.X * 4;
-            //mappedSubresource.DepthPitch = (uint)texture.Size.X * 4;
+            mappedSubresource.RowPitch = (uint)texture.Size.X * 4; // im not sure if its neccesary
 
             videoManager.DeviceContext.Map(testTexture, 0, Map.Read, 0, ref mappedSubresource);
-
 
             byte[] data = new byte[texture.Size.X * texture.Size.Y * 4];
 
@@ -151,6 +149,9 @@ namespace Engine.Video
                 System.Buffer.MemoryCopy(mappedSubresource.PData, pData, data.Length, data.Length);
            
             }
+
+            videoManager.DeviceContext.Unmap(testTexture, 0);
+
             for (int i = 0; i < data.Length; i++)
             {
                 Console.WriteLine((int)data[i]);

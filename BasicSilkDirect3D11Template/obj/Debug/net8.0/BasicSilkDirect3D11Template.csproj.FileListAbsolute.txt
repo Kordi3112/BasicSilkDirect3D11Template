@@ -58,3 +58,4 @@ C:\Users\Kordian\source\repos\BasicSilkDirect3D11Template\BasicSilkDirect3D11Tem
 C:\Users\Kordian\source\repos\BasicSilkDirect3D11Template\BasicSilkDirect3D11Template\bin\Debug\net8.0\SharpDX.DXGI.dll
 C:\Users\Kordian\source\repos\BasicSilkDirect3D11Template\BasicSilkDirect3D11Template\bin\Debug\net8.0\Content\test.png
 C:\Users\Kordian\source\repos\BasicSilkDirect3D11Template\BasicSilkDirect3D11Template\bin\Debug\net8.0\ErrorHandler.exe
+C:\Users\Kordian\source\repos\BasicSilkDirect3D11Template\BasicSilkDirect3D11Template\obj\Debug\net8.0\BasicSilkDirect3D11Template.sourcelink.json

@@ -10,3 +10,4 @@ C:\Users\Kordian\source\repos\BasicSilkDirect3D11Template\Engine\obj\Debug\net8.
 C:\Users\Kordian\source\repos\BasicSilkDirect3D11Template\Engine\obj\Debug\net8.0\refint\Engine.dll
 C:\Users\Kordian\source\repos\BasicSilkDirect3D11Template\Engine\obj\Debug\net8.0\Engine.pdb
 C:\Users\Kordian\source\repos\BasicSilkDirect3D11Template\Engine\obj\Debug\net8.0\ref\Engine.dll
+C:\Users\Kordian\source\repos\BasicSilkDirect3D11Template\Engine\obj\Debug\net8.0\Engine.sourcelink.json
